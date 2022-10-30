@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Runtime">
+      <UniqueIdentifier>{4995DAC4-B574-5960-BE8C-E4362AEBBFC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Core">
+      <UniqueIdentifier>{416F811B-2DD2-10C0-D657-4976C299DC42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Core\Private">
+      <UniqueIdentifier>{2BB7FC14-1746-86DE-C064-9AD9ACD29684}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Core\Public">
+      <UniqueIdentifier>{4F3F706D-BBA0-4D7B-440E-942DB06E843A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\GumaEngine.h" />
+    <ClInclude Include="Source\Runtime\Core\Public\Application.h">
+      <Filter>Runtime\Core\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Public\Core.h">
+      <Filter>Runtime\Core\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Public\EntryPoint.h">
+      <Filter>Runtime\Core\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Public\Log.h">
+      <Filter>Runtime\Core\Public</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Runtime\Core\Private\Application.cpp">
+      <Filter>Runtime\Core\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Core\Private\Log.cpp">
+      <Filter>Runtime\Core\Private</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

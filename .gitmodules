@@ -1,0 +1,3 @@
+[submodule "GumaEngine/Plugins"]
+	path = GumaEngine/Plugins
+	url = https://github.com/gabime/spdlog
