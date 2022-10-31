@@ -21,7 +21,8 @@ project "GumaEngine"
 	includedirs
 	{
 		"GumaEngine/Plugins/spdlog/include",
-		"GumaEngine/Source/Runtime/Core/Public"
+		"GumaEngine/Source/Runtime/Core/Public",
+		"GumaEngine/Source/Runtime/Engine/Public"
 	}
 
 	filter "system:windows"
