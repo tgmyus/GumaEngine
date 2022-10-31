@@ -7,3 +7,5 @@
 		#define GUMA_API __declspec(dllimport)
 	#endif
 #endif
+
+#define BIT(x) (x << 1)

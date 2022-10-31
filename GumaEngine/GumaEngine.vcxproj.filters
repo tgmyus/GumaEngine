@@ -13,6 +13,15 @@
     <Filter Include="Runtime\Core\Public">
       <UniqueIdentifier>{4F3F706D-BBA0-4D7B-440E-942DB06E843A}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Runtime\Engine">
+      <UniqueIdentifier>{AE932C06-9A61-200C-83F5-90326F62FC70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Engine\Public">
+      <UniqueIdentifier>{1C87B223-88F3-6D1E-51E7-057CBD129086}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Engine\Public\Input">
+      <UniqueIdentifier>{1B1CA475-8729-D25B-1010-CE467C1C9E12}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\GumaEngine.h" />
@@ -27,6 +36,18 @@
     </ClInclude>
     <ClInclude Include="Source\Runtime\Core\Public\Log.h">
       <Filter>Runtime\Core\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Engine\Public\Input\AppEvent.h">
+      <Filter>Runtime\Engine\Public\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Engine\Public\Input\Event.h">
+      <Filter>Runtime\Engine\Public\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Engine\Public\Input\InputCodes.h">
+      <Filter>Runtime\Engine\Public\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Engine\Public\Input\InputEvent.h">
+      <Filter>Runtime\Engine\Public\Input</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
