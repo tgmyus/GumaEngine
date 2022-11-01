@@ -1,6 +1,8 @@
+#include "Precompiled.h"
 #include "Application.h"
 
-#include <iostream>
+#include "Input/AppEvent.h"
+#include "Log.h"
 
 namespace Guma
 {

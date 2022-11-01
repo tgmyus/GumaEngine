@@ -1,8 +1,10 @@
 workspace "GumaEngine"
-	configurations { "Debug", "Release" }
+	configurations { "Debug", "Release", "Dist" }
 	architecture "x86_64"
 
 outputdir = "%{cfg.buildcfg}/%{cfg.architecture}"
+
+include "GumaEngine/Plugins/GLFW"
 
 project "GumaEngine"
 	location "GumaEngine"
@@ -12,6 +14,9 @@ project "GumaEngine"
 	targetdir ("Binaries/" .. outputdir .. "/%{prj.name}")
 	objdir ("Intermediate/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "Precompiled.h"
+	pchsource "GumaEngine/Source/Precompiled.cpp"
+
 	files
 	{
 		"%{prj.name}/Source/**.h",
@@ -20,9 +25,19 @@ project "GumaEngine"
 
 	includedirs
 	{
-		"GumaEngine/Plugins/spdlog/include",
+		"GumaEngine/Source",
 		"GumaEngine/Source/Runtime/Core/Public",
-		"GumaEngine/Source/Runtime/Engine/Public"
+		"GumaEngine/Source/Runtime/Engine/Public",
+		"GumaEngine/Source/Runtime/RHI/Public",
+
+		"GumaEngine/Plugins/spdlog/include",
+		"GumaEngine/Plugins/GLFW/include"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -86,8 +101,15 @@ project "App"
 
 	filter "configurations:Debug"
 		defines "GUMA_DEBUG"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "GUMA_RELEASE"
+		runtime "Release"
+		optimize "On"
+
+	filter "configurations:Dist"
+		defines "GUMA_DIST"
+		runtime "Release"
 		optimize "On"

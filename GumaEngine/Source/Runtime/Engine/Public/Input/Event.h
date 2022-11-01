@@ -2,8 +2,6 @@
 
 #include "Core.h"
 
-#include <functional>
-
 namespace Guma
 {
 	enum class EventType
