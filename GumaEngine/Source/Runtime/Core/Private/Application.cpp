@@ -6,8 +6,16 @@
 
 namespace Guma
 {
+	Application::Application()
+	{
+		Window = WindowBase::Create(WindowProps());
+	}
+
 	void Application::Run()
 	{
-		std::cout << "Run" << std::endl;
+		while (bRunning && Window.get())
+		{
+			Window->Update();
+		}
 	}
 }

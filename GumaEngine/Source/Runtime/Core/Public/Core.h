@@ -9,3 +9,14 @@
 #endif
 
 #define BIT(x) (x << 1)
+
+#include "Precompiled.h"
+
+namespace Guma
+{
+	template<typename T, typename ... Args>
+	constexpr std::unique_ptr<T> MakeUnique(Args&& ... InArgs)
+	{
+		return std::make_unique<T>(std::forward<Args>(InArgs)...);
+	}
+}

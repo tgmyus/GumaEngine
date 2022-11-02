@@ -56,13 +56,20 @@ project "GumaEngine"
 			("{COPY} %{cfg.buildtarget.relpath} ../Binaries/" .. outputdir .. "/App")
 		}
 
-	filter "configurations:Debug"
-		defines "GUMA_DEBUG"
-		symbols "On"
+		filter "configurations:Debug"
+			defines "GUMA_DEBUG"
+			runtime "Debug"
+			symbols "On"
 
-	filter "configurations:Release"
-		defines "GUMA_RELEASE"
-		optimize "On"
+		filter "configurations:Release"
+			defines "GUMA_RELEASE"
+			runtime "Release"
+			optimize "On"
+
+		filter "configurations:Dist"
+			defines "GUMA_DIST"
+			runtime "Release"
+			optimize "On"
 
 project "App"
 	location "App"
@@ -80,8 +87,10 @@ project "App"
 
 	includedirs
 	{
-		"GumaEngine/Plugins/spdlog/include",
-		"GumaEngine/Source"
+		"GumaEngine/Source",
+		"GumaEngine/Source/Runtime/RHI/Public",
+
+		"GumaEngine/Plugins/spdlog/include"
 	}
 
 	links
@@ -99,17 +108,17 @@ project "App"
 			"GUMA_PLATFORM_WINDOWS"
 		}
 
-	filter "configurations:Debug"
-		defines "GUMA_DEBUG"
-		runtime "Debug"
-		symbols "On"
+		filter "configurations:Debug"
+			defines "GUMA_DEBUG"
+			runtime "Debug"
+			symbols "On"
 
-	filter "configurations:Release"
-		defines "GUMA_RELEASE"
-		runtime "Release"
-		optimize "On"
+		filter "configurations:Release"
+			defines "GUMA_RELEASE"
+			runtime "Release"
+			optimize "On"
 
-	filter "configurations:Dist"
-		defines "GUMA_DIST"
-		runtime "Release"
-		optimize "On"
+		filter "configurations:Dist"
+			defines "GUMA_DIST"
+			runtime "Release"
+			optimize "On"
