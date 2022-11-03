@@ -12,7 +12,11 @@ namespace Guma
 
 		void Run();
 
+		void OnEventDispatched(class EventBase& InEvent);
+
 	private:
+		bool OnWindowClosed(const class WindowCloseEvent& InEvent);
+
 		std::unique_ptr<WindowBase> Window;
 		bool bRunning = true;
 	};
