@@ -54,14 +54,14 @@ namespace Guma
 		EVENT_CLASS_TYPE(OnMouseMoved)
 		EVENT_CLASS_CATEGORY(InputEvent | MouseEvent)
 
-		MouseMoveEvent(float InMouseX, float InMouseY) : MouseX(InMouseX), MouseY(InMouseY) {}
+		MouseMoveEvent(float InPosX, float InPosY) : PosX(InPosX), PosY(InPosY) {}
 
-		float GetMouseX() const { return MouseX; }
-		float GetMouseY() const { return MouseY; }
+		float GetPosX() const { return PosX; }
+		float GetPosY() const { return PosY; }
 
 	private:
-		float MouseX;
-		float MouseY;
+		float PosX;
+		float PosY;
 	};
 
 	class MouseScrollEvent : public EventBase
